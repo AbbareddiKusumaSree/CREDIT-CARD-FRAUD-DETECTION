@@ -1,53 +1,84 @@
 Credit Card Fraud Detection
-This project detects fraudulent credit card transactions using **Machine Learning models**: Logistic Regression, Random Forest, and XGBoost. It includes data preprocessing, model training, evaluation (ROC-AUC, confusion matrix), and saving models for deployment.
 
-Dataset used: [Kaggle Credit Card Fraud Detection](https://www.kaggle.com/mlg-ulb/creditcardfraud).
+This project focuses on identifying fraudulent credit card transactions using powerful Machine Learning models such as Logistic Regression, Random Forest, and XGBoost. The system includes end-to-end steps like data preprocessing, model training, performance evaluation (ROC-AUC, confusion matrix), and saving models for real-world deployment.
 
- 1. Problem Statement
-Credit card fraud detection is challenging due to:
-- Highly imbalanced dataset (fraudulent transactions are rare).
-- Need for high accuracy and low false positives.
-This project builds and compares models to predict fraud effectively.
+Dataset used: Kaggle Credit Card Fraud Detection
+(https://www.kaggle.com/mlg-ulb/creditcardfraud
+)
 
- 2. Dataset
-- **Features**:
-  - V1–V28: PCA-transformed numerical features
-  - Time: Time elapsed between transactions
-  - Amount: Transaction amount
-- **Target**: Class → 0 (Non-Fraud), 1 (Fraud)
-- **Source**: [Kaggle - Credit Card Fraud Detection](https://www.kaggle.com/mlg-ulb/creditcardfraud)
- Download `creditcard.csv` and place it inside the `data/` folder.
+1. Problem Statement
 
- 3. Project Structure
+Detecting credit card fraud is difficult because:
+
+The dataset is highly imbalanced, with very few fraud cases.
+
+The system must achieve high accuracy while keeping false positives low.
+
+This project builds, compares, and evaluates multiple ML models to reliably predict fraudulent transactions.
+
+2. Dataset
+
+Features:
+
+V1–V28: PCA-transformed numerical components
+
+Time: Time elapsed between transactions
+
+Amount: Transaction amount
+
+Target Variable:
+
+0 → Genuine Transaction
+
+1 → Fraudulent Transaction
+
+Source: Kaggle Credit Card Fraud Detection
+After downloading creditcard.csv, place it inside the data/ folder.
+
+3. Project Structure
 credit-card-fraud-detection/
-├── data/ # Dataset (creditcard.csv)
-├── models/ # Saved models (.pkl)
-├── scripts/ # Preprocessing, training, evaluation
-├── outputs/ # ROC curve and evaluation results
-├── main.py # Pipeline entry point
-├── requirements.txt # Dependencies
-├── README.md # Project documentation
-└── .gitignore # Files to ignore in Git
+├── data/          # Dataset (creditcard.csv)
+├── models/        # Saved models (.pkl)
+├── scripts/       # Preprocessing, training, evaluation
+├── outputs/       # ROC curve, performance results
+├── main.py        # Main pipeline script
+├── requirements.txt
+├── README.md
+└── .gitignore
+
 
 Outputs:
 
-Trained models saved in models/
+Trained models → models/
 
-ROC curve saved in outputs/roc_curve.png
+ROC Curve → outputs/roc_curve.png
+
 4. Scripts Overview
-preprocess.py → Loads and scales data, saves scaler.
+
+preprocess.py → Loads data, scales features, saves scaler.
 
 train.py → Trains Logistic Regression, Random Forest, and XGBoost models.
 
-evaluate.py → Evaluates models (Accuracy, Confusion Matrix, Classification Report, ROC-AUC) and generates ROC curve.
+evaluate.py → Generates accuracy, confusion matrix, classification report, ROC-AUC, and ROC curve visualization.
 
 5. Results
-Logistic Regression → Baseline model.
 
-Random Forest → Better accuracy and robustness.
+Logistic Regression: Baseline performance.
 
-XGBoost → Typically the best ROC-AUC score.
+Random Forest: Improved accuracy and stability.
+
+XGBoost: Highest ROC-AUC score; best-performing model overall.
 
 6. Technologies Used
+
 Python 3
-pandas, scikit-learn, xgboost, matplotlib, joblib
+
+pandas
+
+scikit-learn
+
+xgboost
+
+matplotlib
+
+joblib
